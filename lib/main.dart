@@ -10,8 +10,12 @@ class HomeScr extends StatefulWidget {
 }
 
 class _HomeScrState extends State<HomeScr> {
+
+
+  int num = 0;
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         appBar: AppBar(
           title: Text("Quip"),
@@ -19,10 +23,12 @@ class _HomeScrState extends State<HomeScr> {
         ),
         body: Column(
           children: [
-            Container(
-              color: Colors.amberAccent,
-              child: Text("Type here"),
-            ),
+            IconButton(icon: Icon(Icons.add), onPressed: (){
+              setState(() {
+                num++;
+              });
+            }),
+            Text('$num')
           ],
         ));
   }
