@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "136084175376",
+    "project_id": "quip-6d3b1",
+    "storage_bucket": "quip-6d3b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:136084175376:android:cb92d9ebeece7ccd7c6895",
+        "android_client_info": {
+          "package_name": "com.blimp.quip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "136084175376-u60og3bg4jchbn500mf602nvn4j6a115.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDG4cfA1W8uwncKrUTFjffQj73xy4I-Wp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "136084175376-u60og3bg4jchbn500mf602nvn4j6a115.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

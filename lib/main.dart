@@ -1,35 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:quip/screens/wrapper.dart';
 
 void main() {
-  runApp(MaterialApp(home: HomeScr()));
+  runApp(MyApp());
 }
 
-class HomeScr extends StatefulWidget {
-  @override
-  _HomeScrState createState() => _HomeScrState();
-}
+class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
 
-class _HomeScrState extends State<HomeScr> {
-
-
-  int num = 0;
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Quip"),
-          centerTitle: true,
-        ),
-        body: Column(
-          children: [
-            IconButton(icon: Icon(Icons.add), onPressed: (){
-              setState(() {
-                num++;
-              });
-            }),
-            Text('$num')
-          ],
-        ));
+    return MaterialApp(
+      home: Wrapper(),
+    );
   }
 }
