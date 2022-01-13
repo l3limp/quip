@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "718958528029",
+    "project_id": "quip-9c3a7",
+    "storage_bucket": "quip-9c3a7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718958528029:android:e49b9809b32b0cdbc668f4",
+        "android_client_info": {
+          "package_name": "com.example.quip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718958528029-cq8d4lc0dd3hvr9a2otpj3oqu1l37o34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGgCw7Xv1uszpZYxLh-vU8TIHr30xwUs4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718958528029-cq8d4lc0dd3hvr9a2otpj3oqu1l37o34.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
