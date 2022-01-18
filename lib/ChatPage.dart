@@ -100,16 +100,12 @@ class _ChatPageState extends State<ChatPage> {
   _getMessage(AsyncSnapshot<QuerySnapshot> snapshot, String username) {
     return snapshot.data!.docs.map((DocumentSnapshot document) {
       Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-      if ("User1" == data['username']) {
+      if (arguments['user'] == data['username']) {
         return Padding(
           padding: EdgeInsets.fromLTRB(120, 10, 0, 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(120, 10, 60, 10),
-                child: Text('User1'),
-              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -128,7 +124,7 @@ class _ChatPageState extends State<ChatPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: CircleAvatar(
                       backgroundColor: Colors.amber,
-                      child: Text('1'),
+                      child: Text(arguments['user'].toString().substring(0, 1)),
                     ),
                   ),
                 ],
@@ -136,22 +132,18 @@ class _ChatPageState extends State<ChatPage> {
             ],
           ),
         );
-      } else if ("User2" == data['username']) {
+      } else {
         return Padding(
           padding: const EdgeInsets.fromLTRB(0, 10, 120, 10),
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 120, 10),
-                child: Text('User2'),
-              ),
               Row(
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: CircleAvatar(
                       backgroundColor: Colors.pink,
-                      child: Text('2'),
+                      child: Text(arguments['user'].toString().substring(0, 1)),
                     ),
                   ),
                   Container(
@@ -169,11 +161,6 @@ class _ChatPageState extends State<ChatPage> {
               ),
             ],
           ),
-        );
-      } else {
-        return Container(
-          color: Colors.blue,
-          child: Text('greyyyyy'),
         );
       }
     }).toList();

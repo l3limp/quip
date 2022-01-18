@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -13,18 +14,7 @@ class _ChooseUsernameState extends State<ChooseUsername> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: FutureBuilder(
-          future: Firebase.initializeApp(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return Container(
-                child: _buildChooseUser(),
-              );
-            } else {
-              return const Center(child: CircularProgressIndicator());
-            }
-          },
-        ),
+        child: _buildChooseUser(),
       ),
     );
   }
@@ -66,7 +56,25 @@ class _ChooseUsernameState extends State<ChooseUsername> {
                 child: Text('User2', style: TextStyle(color: Colors.green)),
               ),
             )),
+        Divider(
+          thickness: 2,
+          indent: 80,
+          endIndent: 80,
+        ),
+        ElevatedButton(
+          child: Text('Log Out'),
+          onPressed: () {
+            _signOut();
+          },
+          style: ElevatedButton.styleFrom(
+              primary: Colors.green, padding: EdgeInsets.all(8)),
+        )
       ],
     );
+  }
+
+  _signOut() async {
+    await FirebaseAuth.instance.signOut();
+    Navigator.popAndPushNamed(context, '/c');
   }
 }
