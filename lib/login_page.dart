@@ -140,10 +140,11 @@ class LoginPage extends StatelessWidget {
 
   Future<void> createUser(String username) {
     return users
-        .doc()
+        .doc(_firebaseAuth.currentUser!.uid)
         .set({
           'username': username,
-          'emailID': _firebaseAuth.currentUser!.email.toString()
+          'emailID': _firebaseAuth.currentUser!.email.toString(),
+          'password': password,
         })
         .then((value) => print("User Added"))
         .catchError((error) => print("Failed to add user: $error"));
