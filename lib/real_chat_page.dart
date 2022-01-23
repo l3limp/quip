@@ -137,7 +137,7 @@ class _RealChatPageState extends State<RealChatPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: CircleAvatar(
                       backgroundColor: Colors.amber,
-                      child: Text(data['userID'].toString().substring(0, 1)),
+                      child: Text("Me"),
                     ),
                   ),
                 ],
@@ -156,7 +156,8 @@ class _RealChatPageState extends State<RealChatPage> {
                     padding: const EdgeInsets.all(8.0),
                     child: CircleAvatar(
                       backgroundColor: Colors.pink,
-                      child: Text(data['userID'].toString().substring(0, 1)),
+                      child: Text(
+                          arguments['username'].toString().substring(0, 1)),
                     ),
                   ),
                   Container(
