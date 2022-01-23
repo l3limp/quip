@@ -26,7 +26,9 @@ class _ChatPageState extends State<ChatPage> {
         .snapshots();
     arguments = ModalRoute.of(context)!.settings.arguments as Map;
     messages = FirebaseFirestore.instance.collection('chats');
-
+    Future.delayed(const Duration(milliseconds: 700), () {
+      _scrollToBottom();
+    });
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
@@ -102,7 +104,7 @@ class _ChatPageState extends State<ChatPage> {
       Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
       if (arguments['user'] == data['username']) {
         return Padding(
-          padding: EdgeInsets.fromLTRB(120, 10, 0, 10),
+          padding: EdgeInsets.fromLTRB(10, 10, 0, 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -116,7 +118,11 @@ class _ChatPageState extends State<ChatPage> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Text(data['message']),
+                      child: Container(
+                        constraints: BoxConstraints(
+                            maxWidth: MediaQuery.of(context).size.width - 150),
+                        child: Text(data['message']),
+                      ),
                     ),
                     alignment: Alignment.bottomRight,
                   ),
@@ -134,7 +140,7 @@ class _ChatPageState extends State<ChatPage> {
         );
       } else {
         return Padding(
-          padding: const EdgeInsets.fromLTRB(0, 10, 120, 10),
+          padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
           child: Column(
             children: [
               Row(
@@ -153,7 +159,11 @@ class _ChatPageState extends State<ChatPage> {
                     ),
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(10, 15, 10, 15),
-                      child: Text(data['message']),
+                      child: Container(
+                        constraints: BoxConstraints(
+                            maxWidth: MediaQuery.of(context).size.width - 150),
+                        child: Text(data['message']),
+                      ),
                     ),
                     alignment: Alignment.bottomLeft,
                   ),
